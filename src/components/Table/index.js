@@ -4,7 +4,7 @@ import "./Table.css";
 import DataAreaContext from "../../utils/DataAreaContext";
 
 const Table = () => {
-    const context = useContext(DataAreaContext);
+    const { tableState, handleSort } = useContext(DataAreaContext);
 
     return (
 
@@ -15,14 +15,14 @@ const Table = () => {
             >
                 <thead>
                     <tr>
-                        {context.developerState.headings.map(({ name, width }) => {
+                        {tableState.headings.map(({ name, width }) => {
                             return (
                                 <th
                                     className="col"
                                     key={name}
                                     style={{ width }}
                                     onClick={() => {
-                                        context.handleSort(name.toLowerCase());
+                                        handleSort(name.toLowerCase());
                                     }}
                                 >
                                     {name}
