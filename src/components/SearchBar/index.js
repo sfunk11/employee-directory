@@ -1,7 +1,7 @@
 import React from "react";
 import NameSearch from "../NameSearch";
 import LocationSearch from "../LocationSearch";
-import "./searchbar.css";
+import "./SearchBar.css";
 
 
 function SearchBar() {
