@@ -3,7 +3,7 @@ import "./LocationSearch.css";
 import DataAreaContext from "../../utils/DataAreaContext";
 
 const LocationSearch = () => {
-    const context = useContext(DataAreaContext);
+    const { handleLocationChange} = useContext(DataAreaContext);
 
     return (
         <div className="searchbox">
@@ -11,9 +11,9 @@ const LocationSearch = () => {
                 <input
                     className="form-control mr-sm-2"
                     type="search"
-                    placeholder="Enter Location"
+                    placeholder="Enter Location State"
                     aria-label="Search"
-                    onChange={e => context.handleSearchChange(e)}
+                    onChange={e => handleLocationChange(e)}
                 />
                 <button className="btn my-2 my-sm-0" type="submit">
                     Search

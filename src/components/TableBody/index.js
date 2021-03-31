@@ -7,7 +7,8 @@ const TableBody = () => {
 
   return (
     <tbody>
-       {tableState.filteredUsers[0].map(({ login, name, picture, phone, email, location }) => {
+       {tableState.filteredUsers[0] !== undefined  ? (
+       tableState.filteredUsers.map(({ login, name, picture, phone, email, location }) => {
           return (
             <tr key={login.uuid}>
               <td data-th="Image" className="align-middle">
@@ -32,9 +33,11 @@ const TableBody = () => {
                 {location.city}, {location.state}
               </td>
             </tr>
-          );
-        })
-      }
+       );
+      })
+    ) : (
+      <></>
+    )}
     </tbody>
   );
 }

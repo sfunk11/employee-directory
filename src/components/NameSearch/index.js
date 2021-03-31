@@ -3,17 +3,17 @@ import "./SearchName.css";
 import DataAreaContext from "../../utils/DataAreaContext";
 
 const SearchName = () => {
-    const context = useContext(DataAreaContext);
+    const { handleNameChange } = useContext(DataAreaContext);
 
     return (
         <div className="searchbox">
             <form className="form-inline">
                 <input
-                    className="form-control mr-sm-2"
+                    className="form-control input-group mb-3 float-center mr-sm-2"
                     type="search"
-                    placeholder="Enter Name"
+                    placeholder="Enter First Name"
                     aria-label="Search"
-                    onChange={e => context.handleSearchChange(e)}
+                    onChange={e => handleNameChange(e)}
                 />
                 <button className="btn my-2 my-sm-0" type="submit">
                     Search

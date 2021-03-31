@@ -56,24 +56,48 @@ return b[heading]-  a[heading];
 
    const sortedUsers = tableState.filteredUsers.sort(compare);
    setTableState({...tableState, filteredUsers: sortedUsers});
+    }
 
-}
   useEffect(() => {
       API.getUsers().then(res => {
       console.log(res)
         setTableState({
           ...tableState,
-          users: [res.data.results],
-          filteredUsers: [res.data.results]
+          users: res.data.results,
+          filteredUsers: res.data.results
         });
       console.log(tableState.filteredUsers);
       });
     }, []);
 
+    function handleNameChange(event) {
+    const filter = event.target.value;
+    const filteredList = tableState.users.filter(item => {
+      let values = item.name.first.toLowerCase();
+      return values.indexOf(filter.toLowerCase()) !== -1;
+    });
+
+    setTableState({
+      ...tableState,
+      filteredUsers: filteredList
+    });
+  }
+
+  function handleLocationChange(event) {
+    const filter = event.target.value;
+    const filteredList = tableState.users.filter(item => {
+      let values = item.location.state.toLowerCase();
+      return values.indexOf(filter.toLowerCase()) !== -1;
+    });
+    setTableState({
+      ...tableState,
+      filteredUsers: filteredList
+    });
+  }
 
       return (
         <DataAreaContext.Provider
-          value={{ tableState, handleSort }}
+          value={{ tableState, handleSort, handleNameChange, handleLocationChange }}
         >
           <Nav />
           <Table/>
