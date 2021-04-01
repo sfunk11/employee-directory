@@ -51,13 +51,11 @@ const DataArea = () => {
 
   useEffect(() => {
       API.getUsers().then(res => {
-      console.log(res)
         setTableState({
           ...tableState,
           users: res.data.results,
           filteredUsers: res.data.results
         });
-      console.log(tableState.filteredUsers);
       });
     }, []);
 
