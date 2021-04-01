@@ -29,6 +29,7 @@ $ npm i
   * HMTL / CSS
   * Javascript
   * Deployed to GitHub pages
+  * Employee List randomly generated using "randomuser.me" api
   * Node.js and packages:
     * create-react-app
     * axios
