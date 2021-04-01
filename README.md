@@ -26,6 +26,7 @@ $ npm i
 
   ## Languages and Technologies Used
   * React
+  * HMTL / CSS
   * Javascript
   * Deployed to GitHub pages
   * Node.js and packages:
