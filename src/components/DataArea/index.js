@@ -42,17 +42,8 @@ const DataArea = () => {
           } else {
             return b[heading] - a[heading];
           } 
-        } else {
-      if (a[heading] === undefined){
-          return 1;
-      } else if (b[heading] === undefined){
-          return -1;
-      } else if (heading ==="name"){
-          return b[heading].first.localeCompare(a[heading].first);
-      } else {
-return b[heading]-  a[heading];
-      }
-  }}
+        } 
+  }
 
    const sortedUsers = tableState.filteredUsers.sort(compare);
    setTableState({...tableState, filteredUsers: sortedUsers});

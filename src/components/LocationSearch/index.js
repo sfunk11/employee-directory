@@ -11,12 +11,12 @@ const LocationSearch = () => {
                 <input
                     className="form-control mr-sm-2"
                     type="search"
-                    placeholder="Enter Location State"
+                    placeholder="Enter State"
                     aria-label="Search"
                     onChange={e => handleLocationChange(e)}
                 />
                 <button className="btn my-2 my-sm-0" type="submit">
-                    Search
+                    Search Location
                  </button>
             </form>
         </div>
